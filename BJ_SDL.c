@@ -125,6 +125,20 @@ SDL_Surface *BJ_LoadImage(const char *f)
   return opt;
 }
 
+/* Create and render a TTF font message */
+SDL_Surface *BJ_CreateMessage(TTF_Font *f, const char *message,
+                              int r, int g, int b)
+{
+  SDL_Surface *temp = NULL; // the rendered surface to return
+  SDL_Color c = {r,g,b}; //  create the color to render in
+  temp = TTF_RenderText_Solid(f, "Hello World", c);
+  if( !temp ){
+    fprintf(stdout, "Error rendering text: %s\n", TTF_GetError());
+  }
+
+  return temp;
+}
+
 /* apply one surface to another with x and y */
 void BJ_ApplySurface(int x, int y, SDL_Surface *src, SDL_Surface *dst)
 {

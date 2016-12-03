@@ -32,6 +32,10 @@ void BJ_ClearWindow(SDL_Surface *win, int r, int g, int b);
 /* load and optimize an image */
 SDL_Surface *BJ_LoadImage(const char *f);
 
+/* Create and render a TTF font message */
+SDL_Surface *BJ_CreateMessage(TTF_Font *f, const char *message,
+                              int r, int g, int b);
+
 /* apply one surface to another with x and y and width and height */
 void BJ_ApplySurface(int x, int y, SDL_Surface *src, SDL_Surface *dst);
 
