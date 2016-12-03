@@ -11,7 +11,7 @@ int BJ_InitSDL(void)
 {
 
   /* init SDL */
-  if( SDL_Init( SDL_INIT_VIDEO ) < 0 ){
+  if( SDL_Init( SDL_INIT_EVERYTHING ) < 0 ){
     fprintf(stdout, "Error initializing SDL: %s\n", SDL_GetError() );
     return -1;
   }
