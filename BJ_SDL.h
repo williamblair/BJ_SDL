@@ -29,7 +29,8 @@ SDL_Surface *BJ_CreateWindow(unsigned int width, unsigned int height,
 /* fills the window with given color combo */
 void BJ_ClearWindow(SDL_Surface *win, int r, int g, int b);
 
-/* load and optimize an image */
+/* load and optimize an image
+ * for transparency bg should be 255,0,255 */
 SDL_Surface *BJ_LoadImage(const char *f);
 
 /* Create and render a TTF font message */

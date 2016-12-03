@@ -120,6 +120,14 @@ SDL_Surface *BJ_LoadImage(const char *f)
 
     /* free the temp image */
     SDL_FreeSurface(temp);
+
+    /* make sure load was successfull and apply transparency */
+    if( opt != NULL ){
+      Uint32 colorKey = SDL_MapRGB(opt->format, 255, 0, 255);
+
+      /* apply specified transparent color */
+      SDL_SetColorKey(opt, SDL_SRCCOLORKEY, colorKey);
+    }
   }
 
   return opt;
