@@ -5,7 +5,6 @@
 
 #include "BJ_SDL.h"
 
-
 /* init SDL and IMG and Mixer */
 int BJ_InitSDL(void)
 {
@@ -35,9 +34,9 @@ int BJ_InitSDL(void)
   //flags = MIX_INIT_MP3;
   //initted = Mix_Init(flags);
   //if( initted&flags != flags ){
-//    fprintf(stdout, "Failed to init Mixer (mp3)!\n%s\n", Mix_GetError());
-//    return -1;
-//  }
+  //  fprintf(stdout, "Failed to init Mixer (mp3)!\n%s\n", Mix_GetError());
+  //  return -1;
+  //}
 
   /* 44.1 khz, signed 16bit, system byte order, stereo audiom 1024 byte chunks */
   if(Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1){
@@ -64,8 +63,8 @@ void BJ_QuitSDL(SDL_Surface *s, ...)
 
   va_end( surf_list );
 
-//  Mix_CloseAudio();
-//  Mix_Quit();
+  Mix_CloseAudio();
+  //Mix_Quit();
   TTF_Quit();
   IMG_Quit();
   SDL_Quit();
